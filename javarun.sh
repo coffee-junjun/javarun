@@ -7,7 +7,7 @@ JAVAFILE=${JAVA%.*}
 if [ `echo $1 | grep /` ]; then # 絶対パス､相対パスの処理
 	DIR=$PWD #現在のディレクトリの格納
 	CD=${FILE%/*} #移動先のディレクトリ
-	cd ${CD}/ && javac -encoding Shift_JIS ${JAVA} && java ${JAVAFILE} && rm ${JAVAFILE}.class && cd ${DIR}
+	cd ${CD}/ && javac -encoding Shift_JIS ${JAVA} && java ${JAVAFILE} && rm *.class && cd ${DIR}
 else
-	javac -encoding Shift_JIS ${JAVA} && java ${JAVAFILE} && rm ${JAVAFILE}.class
+	javac -encoding Shift_JIS ${JAVA} && java ${JAVAFILE} && rm *.class
 fi
